@@ -28,7 +28,7 @@ export class LinkController {
 
     console.log(realLink)
 
-    response.redirect('https://google.com')
+    response.redirect(realLink)
 
     return response
   }
