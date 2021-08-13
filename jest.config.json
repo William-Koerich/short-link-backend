@@ -1,0 +1,29 @@
+{
+  "transform": {
+    ".(ts)": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^~(.*)$": "<rootDir>/src/$1",
+    "^helpers(.*)$": "<rootDir>/__tests__/helpers/$1"
+  },
+  "testEnvironment": "node",
+  "preset": "ts-jest",
+  "testMatch": ["**/__tests__/**/*test.ts?(x)"],
+  "modulePathIgnorePatterns": ["<rootDir>/__tests__/helpers"],
+  "collectCoverageFrom": [
+    "src/**/*.ts",
+    "!src/index.ts",
+    "!src/lib/**/*.ts",
+    "!src/config/**/*.ts"
+  ],
+  "reporters": [
+    "default",
+    [
+      "./node_modules/jest-html-reporter",
+      {
+        "pageTitle": "Short Url",
+        "outputPath": "coverage/index.html"
+      }
+    ]
+  ]
+}
