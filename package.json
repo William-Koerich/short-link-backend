@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=dev nodemon src/index.ts",
+    "test": "NODE_ENV=test jest --runInBand",
+    "start": "yarn build && nodemon dist",
+    "build": "tsc --build",
+    "test:unit": "NODE_ENV=test jest unit --verbose",
+    "test:path": "NODE_ENV=test jest --runInBand --verbose",
+    "test:coverage": "NODE_ENV=test jest --runInBand --coverage",
+    "test:integration": "NODE_ENV=test jest integration --runInBand --verbose"
   },
   "keywords": [],
   "author": "",
